@@ -41,7 +41,6 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    console.log('App componentDidMount');
 
     const contacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(contacts);
@@ -52,16 +51,13 @@ export class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('App componentDidUpdate');
 
     if (this.state.contacts !== prevState.contacts) {
-      console.log('Обновилосись contacts');
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
 
   render() {
-    console.log('render App');
     const onFilterName = this.onFilterForm();
 
     return (
